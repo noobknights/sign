@@ -29,8 +29,9 @@ mainBtn.onclick = async (e) => {
 
 closeBtn.onclick = async () => {
 	console.log("closeBtn");
-	cancelAnimationFrame(myReq);
 	await webCam.stop();
+	await webCam.pause();
+	cancelAnimationFrame(myReq);
 	mainMenu.style.display = "none";
 	startMenu.style.display = "flex";
 };
