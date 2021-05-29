@@ -4,4 +4,4 @@
 
 # Sign
 
-Android app to show real-time messages by sign-language people.
+An app to show real-time messages by sign-language people.
