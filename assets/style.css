@@ -1,0 +1,53 @@
+:root {
+	--c1: #2e58ff;
+	--c2: #8bc4ff;
+	--f25: 25px;
+}
+html,
+body {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+}
+.sub-cont {
+	max-width: 500px;
+}
+.text-c1 {
+	color: var(--c1);
+}
+#start {
+	display: flex;
+	transition: 0.2s;
+}
+#main {
+	display: none;
+	transition: 0.2s;
+	padding: 0;
+}
+
+#close-btn {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	font-size: 10px;
+	padding: 0;
+	font-size: var(--f25);
+}
+#close-btn:hover {
+	color: red;
+}
+#main-btn {
+	bottom: 10px;
+}
+#message {
+	position: absolute;
+	bottom: 150px;
+	color: var(--c1);
+}
+#webcam {
+	display: contents;
+}
+
+canvas {
+	height: 100vh;
+}
