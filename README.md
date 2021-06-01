@@ -4,4 +4,4 @@
 
 # Sign
 
-An app to show real-time messages by sign-language people.
+An app to convert sign language to readable sentences in real-time. 
