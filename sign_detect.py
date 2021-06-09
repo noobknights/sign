@@ -8,7 +8,7 @@ import os
 
 TOP_LEFT = (0,0)
 BOTTOM_RIGHT = (300,300)
-
+FONT = cv2.FONT_HERSHEY_SIMPLEX
 ##########################
 def to_alphabet(number):
     return chr(number+65)
@@ -33,8 +33,8 @@ while True:
     window = frame[:300,:300]
     window = cv2.resize(window,(28,28))
     pred = prediction(model,window)
+    cv2.putText(frame, pred, (550,75), FONT, 3, (0, 255, 0), 2, cv2.LINE_AA)
     cv2.imshow('camera',frame)
-    print(pred)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
