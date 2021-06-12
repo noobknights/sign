@@ -4,4 +4,4 @@
 
 # Sign
 
-An app to convert sign language to readable sentences in real-time. 
+An app to convert sign language to readable sentences in real-time.
