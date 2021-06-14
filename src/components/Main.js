@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Webcam from "react-webcam";
-import { ExitToApp } from "@material-ui/icons";
+import { ExitToApp, CameraRear, CameraFront } from "@material-ui/icons";
 import {
 	makeStyles,
 	AppBar,
 	Toolbar,
 	IconButton,
 	Grid,
+	Fab,
+	Zoom,
 } from "@material-ui/core";
 
 const useStyles = makeStyles(() => ({
@@ -15,8 +17,8 @@ const useStyles = makeStyles(() => ({
 		display: "flex",
 	},
 	logo: {
-		maxHeight: "50px",
-		maxWidth: "50px",
+		maxHeight: "35px",
+		maxWidth: "35px",
 	},
 	appbar: {
 		backgroundColor: "transparent",
@@ -26,18 +28,33 @@ const useStyles = makeStyles(() => ({
 		color: "red",
 	},
 	videoArea: {
+		objectFit: "cover",
 		height: "100%",
 		width: "100%",
 	},
+	cameraMode: { position: "absolute", right: 15, bottom: 15 },
 }));
 
 export default function Home() {
 	const classes = useStyles();
+	const [mode, setCameraMode] = useState("user");
+	const [zoom, setZoom] = useState(true);
+
 	const videoConstraints = {
-		width: 1280,
-		height: 720,
-		facingMode: "user",
+		width: window.innerWidth,
+		height: window.innerHeight,
+		facingMode: mode,
 	};
+
+	const cameraModeChange = () => {
+		if (mode === "user") setCameraMode("environment");
+		else setCameraMode("user");
+		setZoom(false);
+		setTimeout(function () {
+			setZoom(true);
+		}, 100);
+	};
+
 	const openHome = () => {
 		window.location = "./";
 	};
@@ -76,10 +93,18 @@ export default function Home() {
 					</Grid>
 				</Toolbar>
 			</AppBar>
-
+			<Zoom in={zoom}>
+				<Fab className={classes.cameraMode} onClick={cameraModeChange}>
+					{mode === "environment" && <CameraFront></CameraFront>}
+					{mode === "user" && <CameraRear></CameraRear>}
+				</Fab>
+			</Zoom>
 			<Webcam
+				audio={false}
 				className={classes.videoArea}
 				videoConstraints={videoConstraints}
+				width={videoConstraints.width}
+				height={videoConstraints.height}
 			/>
 		</div>
 	);

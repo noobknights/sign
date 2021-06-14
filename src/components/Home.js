@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		flexDirection: "column",
 		height: "100%",
+		padding: "0px 10px 0px 10px",
 	},
 	logo: {
 		maxHeight: "200px",
