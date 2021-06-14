@@ -55,6 +55,7 @@ export default function Home() {
 								color="inherit"
 							>
 								<img
+									alt="logo"
 									className={classes.logo}
 									src={"./favicon.png"}
 								></img>

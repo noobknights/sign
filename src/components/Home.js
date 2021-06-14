@@ -32,7 +32,11 @@ export default function Home() {
 
 	return (
 		<div className={classes.introCont}>
-			<img className={classes.logo} src={"./logo512.png"}></img>
+			<img
+				className={classes.logo}
+				alt="logo"
+				src={"./logo512.png"}
+			></img>
 			<h1>Sign</h1>
 			<p className={classes.para}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
