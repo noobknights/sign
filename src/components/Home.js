@@ -1,7 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Nav from "./Nav";
-import Icon from "@material-ui/core/Icon";
 import Button from "@material-ui/core/Button";
 import { PlayArrow } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
