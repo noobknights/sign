@@ -1,7 +1,4 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
-import Nav from "./Nav";
-import Icon from "@material-ui/core/Icon";
 import Button from "@material-ui/core/Button";
 import { PlayArrow } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
@@ -13,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
 		justifyContent: "center",
 		flexDirection: "column",
 		height: "100%",
+		padding: "0px 10px 0px 10px",
 	},
 	logo: {
 		maxHeight: "200px",
@@ -35,7 +33,11 @@ export default function Home() {
 
 	return (
 		<div className={classes.introCont}>
-			<img className={classes.logo} src={"./logo512.png"}></img>
+			<img
+				className={classes.logo}
+				alt="logo"
+				src={"./logo512.png"}
+			></img>
 			<h1>Sign</h1>
 			<p className={classes.para}>
 				Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
