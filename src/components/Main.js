@@ -32,7 +32,7 @@ const useStyles = makeStyles(() => ({
 		height: "100%",
 		width: "100%",
 	},
-	cameraMode: { position: "absolute", right: 15, bottom: 15 },
+	cameraMode: { position: "absolute", right: 15, bottom: 15, zIndex: 1 },
 }));
 
 export default function Home() {
